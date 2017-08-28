@@ -1,0 +1,44 @@
+ <html>
+     <head>
+     <link rel="stylesheet" href="links1.css">
+     </head>
+     
+        <div class="container-fluid">
+        <div class="row">
+<div class="col-md-4">
+</div>
+            <div class="col-md-4">
+<div [hidden]="submitted">    
+    <h1 style="text-align: center;">Login Form</h1>
+   <form (ngSubmit)="onSubmit(complexForm.value)" [formGroup]="complexForm">
+      <div class = "form-group" [ngClass]="{'has-error':!complexForm.controls['userName'].valid}">
+         <label for = "userName">UserName</label>
+         <input type = "text" class = "form-control" id = "userName" required 
+            [formControl]="complexForm.controls['userName']">
+           <div *ngIf="complexForm.controls['userName'].hasError('required') && complexForm.controls['userName'].touched" class="alert alert-danger">You must have a Good Password.</div>
+        <div *ngIf="complexForm.controls['userName'].hasError('minlength') && complexForm.controls['userName'].touched" class="alert alert-danger">Your password must be at least 5 characters long.</div>
+        <div *ngIf="complexForm.controls['userName'].hasError('maxlength') && complexForm.controls['userName'].touched" class="alert alert-danger">Your password cannot exceed 10 characters.</div>
+      </div>
+      
+      <div class = "form-group" [ngClass]="{'has-error':!complexForm.controls['password'].valid}">
+         <label for = "password">Password</label>
+         <input type = "text" class = "form-control" id = "password" required
+           [formControl]="complexForm.controls['password']">
+          
+        <div *ngIf="complexForm.controls['password'].hasError('required') && complexForm.controls['password'].touched" class="alert alert-danger">You must have a Good Password.</div>
+        <div *ngIf="complexForm.controls['password'].hasError('minlength') && complexForm.controls['password'].touched" class="alert alert-danger">Your password must be at least 5 characters long.</div>
+        <div *ngIf="complexForm.controls['password'].hasError('maxlength') && complexForm.controls['password'].touched" class="alert alert-danger">Your password cannot exceed 10 characters.</div>
+        <div class="alert alert-danger" *ngIf="complexForm.controls['password'].hasError('ValidatePassword')">Password not match</div>
+      </div>
+       
+       <button type="submit" class="btn btn-success" [disabled]="!complexForm.valid">Submit</button>
+   </form>
+      
+    </div>
+            </div>
+            <div class="col-md-4"></div>
+</div>
+       
+        </div> 
+     
+</html>

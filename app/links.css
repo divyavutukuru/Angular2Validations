@@ -1,0 +1,20 @@
+body {
+      position: relative;
+	background-color:#99a092;	  
+  }
+  #Home {
+		background-color:#ADCEE6;
+		width:100%;
+		height:500px;
+		opacity: .9;
+		padding-top:200px;
+		padding-left:30px;
+		}
+  #Profile {color: #fff; background-color: #8a8a5c;}
+  #Skills {color: #fff; background-color: #b8b894;}
+  #MyWork {color: #fff; background-color: #8AB8DE;}
+  #Contact {color: #fff; background-color: #8a8a5c;}
+  .divHeight{
+	  height:20px;
+  }
+
